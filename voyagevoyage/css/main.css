@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root{
+    --white: #ddd;
+    --black: #111;
+    --transition: all 0.5s ease;
+    --blue: rgb(0, 65, 204);
+    --lightGrey: #474b4f; 
+    
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    line-height: 1.6;
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+ul li{
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6, p{
+    margin: 15px 0;
+}
+/* Utility */
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 90vw;
+    margin: 0 auto;
+}
+.btn{
+    background: var(--blue);
+    border: none;
+    display: block;
+    width: 150px;
+    text-align: center;
+    color: var(--blue);
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+    font-size: 15px;
+    padding: 12px;
+    border: 2px solid var(--blue);
+    border-radius: 25px;
+    margin: 15px 0;
+    transition: var(--transition);
+
+}
+.btn:hover{
+    background: var(--blue);
+    color: #fff;
+}
+.active{
+    color: var(--blue)!important;
+}
+
+/* Header */
+
+.header{
+    min-height: 100vh;
+}
+
+.bgimage{
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    min-height: 100%;
+    z-index: -10;
+}
+.top-nav a{
+    color : var(--black);
+}
+
+.brand-and-navBtn{
+    background: #000;
+    position: relative;
+    z-index: 999;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 24px;
+    padding: 15px 25px;
+    color: var(--white);
+}
+
+.brand-name{
+    letter-spacing: 5px;
+    cursor: pointer;
+    width: 200px;
+    height: auto;
+}
+
+.navBtn{
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--white);
+    cursor: pointer;
+}
+.navBtn:hover{
+    background: #fff;
+    color: #000;
+    transition: var(--transition);
+}
+.top-nav{
+    background: gray;
+
+    transform: translateY(-600px);
+    transition: var(--transition);
+}
+.showNav{
+    transform: translateY(0);
+}
+.search-icon{
+    display: none;
+}
+.top-nav ul li{
+    padding: 10px 0;
+}
+.top-nav ul a{
+    position: relative;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+}
+.top-nav ul a::after{
+    content: "";
+    height: 2px;
+    background: var(--blue);
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    transition: var(--transition);
+}
+.top-nav ul a:hover::after{
+    width: 100px;
+}
+
+blockquote{
+    font-size: 30px;
+    font-weight: 300;
+    opacity: 0.9;
+    width: 60vw;
+    margin: 200px auto 15px auto;
+    text-align: center;
+    text-shadow: 0 3px 3px white;
+}
+
+@media screen and (min-width: 992px){
+    /* header & footer */
+    .nav-section{
+        display: flex;
+        justify-content: space-between;
+    }
+    .navBtn{
+        display: none;
+    }
+    .brand-and-navBtn{
+        flex: 0 0 10%;
+        background: none;
+    }
+    .top-nav{
+        flex: 0 1 80%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        transition: transform 0s ease;
+        transform: translateY(0);
+        background: transparent;
+    }
+    .top-nav ul{
+        display: flex;
+    }
+    .top-nav ul li{
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+    .search-icon{
+        flex: 0 0 10%;
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+    .search-icon i:hover{
+        transform: scale(1.2);
+    }
+}
+
+
+/* ----- MAIN ----- */
+
+/* section one */
+
+.section-one{
+    padding-top: 40px;
+    padding-bottom : 40px;
+    min-height: 100vh;
+    background-color: white;
+    z-index: 2;
+}
+
+.section-one-left{
+    height: 100vh;
+    background: url("../images/tokyoimg.jpg") center/cover no-repeat;
+    box-shadow: 0px 0px 14px -1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 14px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 14px -1px rgba(0, 0, 0, 0.75);
+}
+.section-one-left div{
+    color: rgb(255, 255, 255);
+    background: linear-gradient(rgba(230, 100, 100, 0), #0000009a);
+    text-shadow: 0 2px 5px #000000;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+}
+.section-one-left div h3{
+    font-size: 28px;
+    opacity: 0.9;
+}
+.section-one-left div p{
+    font-weight: 300;
+    opacity: 0.8;
+}
+.section-one-left div a{
+    text-shadow:none;
+}
+.section-one-right h3{
+    color: var(--lightGrey);
+}
+.section-one-right >h3{
+    text-align: center;
+}
+.section-one-right p{
+    opacity: 0.9;
+    font-weight: 300;
+}
+.work-content{
+    margin: 50px 0;
+}
+.japon-img{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+}
+.hakone-img1{
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url("../images/hakone.jpg") center/cover no-repeat;
+    height: 400px;
+    transition: var(--transition);
+}
+.hakone-img1 h3{
+    font-size: 25px;
+    opacity: 0.9;
+    color: white;
+    text-shadow: 0 2px 5px #000000;
+    text-align: center;
+}
+.kyoto-img2{
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url("../images/kyotopagode.jpg") center/cover no-repeat;
+    height: 400px;
+    transition: var(--transition);
+}
+.kyoto-img2 h3{
+    font-size: 25px;
+    opacity: 0.9;
+    color: white;
+    text-shadow: 0 2px 5px #000000;
+    text-align: center;
+}
+
+.japon-img div:hover{
+    box-shadow: 0 0 8px #000;
+    -webkit-box-shadow: 0 0 8px #000;
+    -moz-box-shadow: 0 0 8px #000;
+}
+
+
+
+@media screen and (min-width: 1000px){
+    /* section one */
+    .section-one .container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 50px;
+    }
+    .section-one-left{
+        align-self: center;
+    }
+    .work-content{
+        margin-top: 0;
+    }
+    .section-one-left{
+        height: 100%;
+    }
+}
+
+/* --- FOOTER --- */
+
+
+.footer{
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+.footer-container > div{
+    margin: 40px 0;
+}
+.footer-container h2{
+    color: rgb(255, 255, 255);
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: 7px;
+}
+.footer-container p{
+    opacity: 0.7;
+}
